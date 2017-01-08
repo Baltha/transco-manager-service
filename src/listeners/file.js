@@ -1,5 +1,6 @@
 const EXCHANGE_NAME = process.env.RABBITMQ_FILE_EXCHANGE;
 const retry = require('servicebus-retry');
+const manager = require('../service/manager.js');
 const bus   = require('../bus.js').create({
   prefetch: 2
 });
@@ -19,7 +20,7 @@ bus.subscribe('transco-manager-files', {
     durable: true,
   },
   ack: true, 
-  routingKey: 'file.updated',
+  routingKey: 'file.downloaded',
   exchangeName: EXCHANGE_NAME,
   exchangeOptions: {
     durable: true,
@@ -27,6 +28,11 @@ bus.subscribe('transco-manager-files', {
     autoDelete: false
   }
 }, (event, data) => {
+  if (manager.canProcess(data.name)) {
+    //probe the movie
+    //calculate presets
+    //find transcoder
+  }
   /**
   event.handle.ack();
   event.handle.reject();

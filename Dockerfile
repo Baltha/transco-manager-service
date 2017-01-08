@@ -6,6 +6,12 @@ ENV RABBITMQ_FILE_EXCHANGE transmission-service
 ENV REDIS_PORT=6379
 ENV MONGO_URL mongodb://localhost/transco-manager
 
+RUN echo "deb http://www.deb-multimedia.org jessie main non-free" >> /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get install -y --force-yes deb-multimedia-keyring  && \
+    apt-get install -y --force-yes ffmpeg && \
+    apt-get clean
+
 VOLUME [ "/home/node/transco-manager-service/data" ]
 
 ADD "src" "/home/node/transco-manager-service/src"

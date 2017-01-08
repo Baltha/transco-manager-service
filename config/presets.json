@@ -1,0 +1,81 @@
+[
+    {
+        "default": true,
+        "name": "480p",
+        "video": {
+            "encoder": "h264",
+            "bitrate": 516096,
+            "maxbitrate": 516096,
+            "width": 720,
+            "height": 480,
+            "preset": "slow"
+        },
+        "audio": {
+            "encoder": "aac",
+            "bitrate": 98304,
+            "channels": 2
+        },
+        "subtitle": {
+            "encoder": "mov_text"
+        },
+        "format": "mp4",
+        "extension": "mp4"
+    },
+    {
+        "name": "720p",
+        "video": {
+            "encoder": "h264",
+            "bitrate": 890880,
+            "maxbitrate": 890880,
+            "width": 1280,
+            "height": 720,
+            "preset": "slow"
+        },
+        "audio": {
+            "encoder": "aac",
+            "bitrate": 131072,
+            "channels": 2
+        },
+        "subtitle": {
+            "encoder": "mov_text"
+        },
+        "format": "mp4",
+        "extension": "mp4"
+    },
+    {
+        "name": "1080p",
+        "video": {
+            "encoder": "h264",
+            "bitrate": 1884160,
+            "maxbitrate": 1884160,
+            "width": 1920, 
+            "height": 1080,
+            "preset": "slow"
+        },
+        "audio": {
+            "encoder": "aac",
+            "bitrate": 163840,
+            "channels": 2
+        },
+        "subtitle": {
+            "encoder": "mov_text"
+        },
+        "format": "mp4",
+        "extension": "mp4"
+    },
+    {
+        "name": "sub",
+        "subtitle": {
+            "encoder": "webvtt",
+            "format": "webvtt",
+            "extension": "vtt"
+        },
+        "thumbnails": {
+            "format": "image2",
+            "extension": "jpg",
+            "delay": "1/10",
+            "width": "120",
+            "columns": 7
+        }
+    }
+]
